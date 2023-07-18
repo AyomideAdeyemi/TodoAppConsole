@@ -26,7 +26,7 @@ while (true)
                 InputMethods();
                 break;
             case 3:
-                    Console.WriteLine("Assessmend Day");
+                    Console.WriteLine("Assessment Day");
                 break;
             case 4:
                 InputMethods();
@@ -43,9 +43,6 @@ while (true)
                     Console.WriteLine("Invalid selection");
                 }
                 break;
-
-
-
         }
 
 
@@ -57,21 +54,23 @@ while (true)
                 while (true)
                 {
                     Console.WriteLine("Add Task");
-                   Start: string Event = Console.ReadLine();
+                    string Event = Console.ReadLine();
                     Console.WriteLine("Add Time in 24hrs format e.g From 1 to 24 \nEnter Hour only");
-                    int Hour = Convert.ToInt32(Console.ReadLine());
+                    Start: int Hour = Convert.ToInt32(Console.ReadLine());
                     if (Hour > 24 || Hour < 0)
                     {
-                        Console.WriteLine("Invalid Hour Format");
+                        Console.WriteLine("Invalid Hour Format Try Again");
                             goto Start;
                     }
+
                     Console.WriteLine("Enter Minutes");
                     Label: int Minutes = Convert.ToInt32(Console.ReadLine());
                     if (Minutes > 60 || Minutes < 0)
                     {
-                        Console.WriteLine("Invalid Minutes Format");
+                        Console.WriteLine("Invalid Minutes Format Try again");
                          goto Label;
                     }
+                    
                    else Console.WriteLine($"Your Task To {Event} by {Hour}:{Minutes} has been successfully added Press 0 to cancel or\nContinue");
 
                 }
